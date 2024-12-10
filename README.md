@@ -64,19 +64,26 @@ console.out(add(4 + 12))
 
 ### Run/Compile QueueLang
 
+**Remember that in these examples, you don't have to use 'your-file' or 'your-package'. You may use any name you wish.**
+
 To run a QueueLang file (.ql), execute this command in terminal:
-```queue
+```bash
 queuelang your-file.ql
 ```
 
 To compile a QueueLang file, execute this command instead:
-```queue
+```bash
 queuelang -compile your-file.ql -o your-file.exe
 ```
-When compiling, you can choose either a .exe file (given in the example command above), or create it without an extension. On Windows, both are valid methods of compiling. Although on Mac/Linux, you are required to use the one without the extension. Either way, to execute it, just run:
-```queue
+When compiling, you can choose either a .exe file (given in the example command above), or create it without an extension. On Windows, both are valid methods of compiling. Although on Mac/Linux, you are **REQUIRED** to **omit the .exe extension**. Either way, to execute it, just run:
+```bash
 ./your-file
 ```
+To compile a QueueLang package, execute:
+```bash
+queuelang -compilepkg your-package.py -o your-package.qlpkg
+```
+The -o flag is not required, but if omitted, the output file will default to queuelang_package.qlpkg. The -o flag allows you to customize the output file name. You **CANNOT** change the extension (.qlpkg) to something different. If you do, it will result in a plugin parser error. Python plugin files (.py) will compile into the .qlpkg file and be used during runtime evaluations and within the QueueLang scripts themselves.
 
 ---
 
